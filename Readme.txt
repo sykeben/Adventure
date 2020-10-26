@@ -193,20 +193,8 @@ did not recieve a precompiled JAR.
 Being a Java application, this should
 be easy to compile on any platform
 through use of the included Makefile.
-
-For most people, a simple "make"
-should do the trick. However, if
-something goes terribly wrong, you
-can compile a version with all the
-debugging info needed for testing
-with "make debug".
-
-Note: If you are on Windows, you may
-need to replace any instances of
-"$(RM)" with "del" in the Makefile
-as some Windows "make" tools do not
-properly map the command to delete
-or remove files.
+Simple run "make" and a JAR file
+should be compiled.
 
 =====================================
 (C)2020 - Ben Sykes

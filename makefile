@@ -1,21 +1,13 @@
-JFLAGS = -verbose
+JFLAGS = -g
 JC = javac
-.SUFFIXES: .java .class
-.java.class:
-        $(JC) $(JFLAGS) $*.java
+AFLAGS = cfe
+AC = jar
 
-CLASSES = \
-        Adventure.java \
-        Battle.java \
-        Dungeon.java \
-        InitStatus.java \
-		Move.java \
-		Player.java \
-		Room.java 
+ifeq ($(OS),Windows_NT)
+    RM = del /f /q
+endif
 
-default: classes
-
-classes: $(CLASSES:.java=.class)
-
-clean:
-        $(RM) *.class
+default:
+	$(JC) $(JFLAGS) *.java
+	$(AC) $(AFLAGS) Adventure.jar Adventure *.class
+	$(RM) *.class
