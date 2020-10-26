@@ -8,9 +8,21 @@ public class Player {
 
     // Constructor
     public Player(String theName) {
-        name = theName;
+        name = formatName(theName);
         lives = 3;
         x = 0; y = 0;
+    }
+
+    // Name Formatter (Private)
+    private String formatName(String theName) {
+        int theLength = theName.length();
+        if (theLength <= 0) {
+            return "";
+        } else if (theLength == 1) {
+            return theName.toUpperCase();
+        } else {
+            return theName.substring(0,1).toUpperCase() + theName.substring(1).toLowerCase();
+        }
     }
 
     // Name Getter
@@ -20,7 +32,7 @@ public class Player {
 
     // Name Setter
     public void setName(String newName) {
-        name = newName;
+        name = formatName(newName);
     }
 
     // Life Getter

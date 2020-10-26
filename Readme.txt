@@ -1,4 +1,11 @@
-+-----------------------------------+
+              .
+               )  ,
+              (    )
+            ___)__(_____,
+            \__________/ \
+             \________/__/
+           .__\______/__.
++----------(____________)-----------+
 |                                   |
 |     T H E   Q U E S T   F O R     |
 |  ,_____,                          |
@@ -9,21 +16,9 @@
 |  |__/                             |
 |                                   |
 +-----------------------------------+
-
-Thank you for playing The Quest for
-Java: A mini text adventure by Ben
-Sykes. This document will teach you
-how to play.
+ A mini text adventure by Ben Sykes.
 
 ========= BACKSTORY & TL;DR =========
-              .
-               )  ,
-              (    )
-            ___)__(_____,
-            \__________/ \
-             \________/__/
-           .__\______/__.
-           (____________)
 
               Welcome!
 
@@ -39,6 +34,21 @@ monsters littered around the dungeon,
 reach the goal, and escape. You have
 3 lives, each which can be lost in
 battle. Good luck!
+
+============ USER INPUT =============
+
+                 >
+         This is your friend.
+
+Since you can't really play a game
+without interacting with it, it's
+important to know when the game is
+prompting you to do something. When
+you see the greater-than symbol, the
+game is prompting you to enter some
+information, usually an answer to a
+question posed just before the prompt
+character.
 
 =========== THE PLAYFIELD ===========
 
@@ -136,20 +146,27 @@ Ok, proof I have obeyed the project
 restrictions is right here:
 
    1. The first custom if statement
-      is located at line 45.
+      is located on line 56.
 
    2. The first custom if-else-if
-      statement begins at line 172.
+      statement begins on line 208.
 
-   3. && is utilized at line 45, and
-      || is utilized at line 170.
+   3. && is utilized on line 90, and
+      || is utilized on line 206.
 
    4. I am not comparing objects as
-      a whole, just return values.
+      a whole, just values returned
+      from functions within those
+      objects.
 
-   5. The text game ends when the
+   5. The game itself ends when the
       statement contained in the
-      while loop at line 91 is false.
+      while loop at line 125 returns
+      false. If the player does not
+      choose to play another round
+      when prompted at line 222,
+      the program cleans up after
+      itself and closes.
 
    6. The game is won once all the
       monsters are defeated (when
@@ -161,6 +178,8 @@ restrictions is right here:
       position, and battle questions
       are all randomized.
 
-   8. Comments are everywhere.
+   8. Comments are everywhere. The
+      first example of one is found
+      on line 8.
 
 =====================================
