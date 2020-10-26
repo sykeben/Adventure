@@ -18,28 +18,6 @@
 +-----------------------------------+
  A mini text adventure by Ben Sykes.
 
-============= COMPILING =============
-
-       if (!developer) skip();
-
-Being a Java application, this should
-be easy to compile on any platform
-through use of the included Makefile.
-
-For most people, a simple "make"
-should do the trick. However, if
-something goes terribly wrong, you
-can compile a version with all the
-debugging info needed for testing
-with "make debug".
-
-Note: If you are on Windows, you may
-need to replace any instances of
-"$(RM)" with "del" in the Makefile
-as some Windows "make" tools do not
-properly map the command to delete
-or remove files.
-
 ========= BACKSTORY & TL;DR =========
 
               Welcome!
@@ -203,6 +181,32 @@ restrictions is right here:
    8. Comments are everywhere. The
       first example of one is found
       on line 1.
+
+============= COMPILING =============
+
+       if (!developer) skip();
+
+The following information only
+pertains to developers or users who
+did not recieve a precompiled JAR.
+
+Being a Java application, this should
+be easy to compile on any platform
+through use of the included Makefile.
+
+For most people, a simple "make"
+should do the trick. However, if
+something goes terribly wrong, you
+can compile a version with all the
+debugging info needed for testing
+with "make debug".
+
+Note: If you are on Windows, you may
+need to replace any instances of
+"$(RM)" with "del" in the Makefile
+as some Windows "make" tools do not
+properly map the command to delete
+or remove files.
 
 =====================================
 (C)2020 - Ben Sykes
