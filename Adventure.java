@@ -47,7 +47,7 @@ public class Adventure {
         System.out.println("|    | |  | (_| |   \\ V /  | (_| |  |");
         System.out.println("|   _/ |   \\__,_|    \\_/    \\__,_|  |");
         System.out.println("|  |__/                             |");
-        System.out.println("|                                   |");
+        System.out.println("|                              v1.0 |");
         System.out.println("+-----------------------------------+");
         System.out.println(" A mini text adventure by Ben Sykes.");
 
