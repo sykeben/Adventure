@@ -1,3 +1,6 @@
+// THE QUEST FOR JAVA (Player Object)
+// (C)2020 - Benjamin Sykes
+
 public class Player {
 
     // Instance Variables

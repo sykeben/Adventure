@@ -1,3 +1,6 @@
+// THE QUEST FOR JAVA (Battle Object)
+// (C)2020 - Benjamin Sykes
+
 import java.util.Random;
 
 public class Battle {

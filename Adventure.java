@@ -1,3 +1,6 @@
+// THE QUEST FOR JAVA (Main Class)
+// (C)2020 - Benjamin Sykes
+
 import java.util.Random;
 import java.util.Scanner;
 import java.util.InputMismatchException;

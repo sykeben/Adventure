@@ -1,3 +1,6 @@
+// THE QUEST FOR JAVA (Initialization Status Object)
+// (C)2020 - Benjamin Sykes
+
 public class InitStatus {
 
     // Instance Variables

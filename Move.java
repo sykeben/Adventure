@@ -1,3 +1,6 @@
+// THE QUEST FOR JAVA (Move Object)
+// (C)2020 - Benjamin Sykes
+
 public class Move {
 
     // Instance Variables

@@ -18,6 +18,28 @@
 +-----------------------------------+
  A mini text adventure by Ben Sykes.
 
+============= COMPILING =============
+
+       if (!developer) skip();
+
+Being a Java application, this should
+be easy to compile on any platform
+through use of the included Makefile.
+
+For most people, a simple "make"
+should do the trick. However, if
+something goes terribly wrong, you
+can compile a version with all the
+debugging info needed for testing
+with "make debug".
+
+Note: If you are on Windows, you may
+need to replace any instances of
+"$(RM)" with "del" in the Makefile
+as some Windows "make" tools do not
+properly map the command to delete
+or remove files.
+
 ========= BACKSTORY & TL;DR =========
 
               Welcome!
@@ -146,13 +168,13 @@ Ok, proof I have obeyed the project
 restrictions is right here:
 
    1. The first custom if statement
-      is located on line 56.
+      is located on line 59.
 
    2. The first custom if-else-if
-      statement begins on line 208.
+      statement begins on line 211.
 
-   3. && is utilized on line 90, and
-      || is utilized on line 206.
+   3. && is utilized on line 93, and
+      || is utilized on line 209.
 
    4. I am not comparing objects as
       a whole, just values returned
@@ -161,10 +183,10 @@ restrictions is right here:
 
    5. The game itself ends when the
       statement contained in the
-      while loop at line 125 returns
+      while loop at line 128 returns
       false. If the player does not
       choose to play another round
-      when prompted at line 222,
+      when prompted at line 225,
       the program cleans up after
       itself and closes.
 
@@ -180,6 +202,7 @@ restrictions is right here:
 
    8. Comments are everywhere. The
       first example of one is found
-      on line 8.
+      on line 1.
 
 =====================================
+(C)2020 - Ben Sykes

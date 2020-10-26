@@ -1,3 +1,6 @@
+// THE QUEST FOR JAVA (Dungeon Object)
+// (C)2020 - Benjamin Sykes
+
 public class Dungeon {
 
     // Instance Variables

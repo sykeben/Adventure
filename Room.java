@@ -1,3 +1,6 @@
+// THE QUEST FOR JAVA (Room Object)
+// (C)2020 - Benjamin Sykes
+
 public class Room {
 
     // Instance Variables
