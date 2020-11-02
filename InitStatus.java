@@ -15,7 +15,7 @@ public class InitStatus {
     // Finisher
     public void finished() {
         done = true;
-        System.out.println(" Done.");
+        System.out.println(ANSI.grn + " Done." + ANSI.rst);
     }
 
     // Status Getter

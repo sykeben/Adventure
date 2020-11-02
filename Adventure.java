@@ -4,24 +4,8 @@
 import java.util.Random;
 import java.util.Scanner;
 import java.util.InputMismatchException;
-import java.io.IOException;
 
 public class Adventure {
-
-    // Screen Clear Function
-    // Sourced from: https://stackoverflow.com/a/38365871/11018374
-    // I am aware this is not recommended.
-    public static void clrScr(){
-        try {
-            if (System.getProperty("os.name").contains("Windows")) {
-                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-            } else {
-                Runtime.getRuntime().exec("clear");
-            }
-        } catch (IOException | InterruptedException ex) {
-            System.out.println();
-        }
-    }
 
     // Main Program
     public static void main(String[] args) {
@@ -30,36 +14,37 @@ public class Adventure {
         Scanner input = new Scanner(System.in);
 
         // Title Screen
-        clrScr();
-        System.out.println("              .");
+        Clearer.go();
+        System.out.println(ANSI.rst + ANSI.bld + ANSI.wht + "              .");
         System.out.println("               )  ,");
         System.out.println("              (    )");
-        System.out.println("            ___)__(_____,");
+        System.out.println(ANSI.yel + "            ___" + ANSI.wht + ")" + ANSI.yel + "__" + ANSI.wht + "(" + ANSI.yel + "_____,");
         System.out.println("            \\__________/ \\");
         System.out.println("             \\________/__/");
-        System.out.println("           .__\\______/__.");
-        System.out.println("+----------(____________)-----------+");
+        System.out.println("            __\\______/__");
+        System.out.println(ANSI.cyn + "+----------" + ANSI.yel + "(____________)" + ANSI.cyn + "-----------+");
         System.out.println("|                                   |");
-        System.out.println("|     T H E   Q U E S T   F O R     |");
-        System.out.println("|  ,_____,                          |");
-        System.out.println("|  |_, ,_|  __ _   __   __   __ _   |");
-        System.out.println("|    | |   / _` |  \\ \\ / /  / _` |  |");
-        System.out.println("|    | |  | (_| |   \\ V /  | (_| |  |");
-        System.out.println("|   _/ |   \\__,_|    \\_/    \\__,_|  |");
-        System.out.println("|  |__/                             |");
-        System.out.println("|                              v1.0 |");
+        System.out.println("|     " + ANSI.wht + "T H E   Q U E S T   F O R" + ANSI.cyn + "     |");
+        System.out.println("|  " + ANSI.wht + "._____." + ANSI.cyn + "                          |");
+        System.out.println("|  " + ANSI.wht + "|_. ._|  __ _   __   __   __ _" + ANSI.cyn + "   |");
+        System.out.println("|  " + ANSI.wht + "  | |   / _` |  \\ \\ / /  / _` |" + ANSI.cyn + "  |");
+        System.out.println("|  " + ANSI.wht + "  | |  | (_| |   \\ V /  | (_| |" + ANSI.cyn + "  |");
+        System.out.println("|  " + ANSI.wht + " _/ |   \\__,_|    \\_/    \\__,_|" + ANSI.cyn + "  |");
+        System.out.println("|  " + ANSI.wht + "|__/" + ANSI.cyn + "                             |");
+        System.out.println("|                              " + ANSI.wht + "v1.1" + ANSI.cyn + " |");
         System.out.println("+-----------------------------------+");
-        System.out.println(" A mini text adventure by Ben Sykes.");
+        System.out.println(ANSI.cyn + " A mini text adventure by Ben Sykes." + ANSI.rst);
 
         // Get Name
         System.out.println();
         System.out.println("Greetings traveler!");
-        System.out.print("What is your name?\n> ");
+        System.out.print("What is your name?\n" + ANSI.bld + "> ");
         String playerName = input.nextLine();
         if (playerName.length() <= 0) {
             playerName = "Player";
         }
-        clrScr();
+        System.out.print(ANSI.rst);
+        Clearer.go();
 
         // Full Program Loop
         boolean again = true;
@@ -118,7 +103,7 @@ public class Adventure {
             // Finish Initialization Timer
             long initFinish = System.nanoTime();
             long initTotal = (initFinish - initStart) / 1000000;
-            System.out.println("Game ready! (" + initTotal + "ms)");
+            System.out.println(ANSI.bld + ANSI.grn + "Game ready! (" + initTotal + "ms)" + ANSI.rst);
 
             // Start Game Timer
             long gameStart = System.nanoTime();
@@ -128,7 +113,7 @@ public class Adventure {
             while (!you.isDead() && !you.isWinner()) {
 
                 // Room Display
-                clrScr();
+                Clearer.go();
                 dungeon.display(you);
                 System.out.println();
 
@@ -154,14 +139,15 @@ public class Adventure {
                             // Get User Input
                             int lastAnswer = 0;
                             done = false; while (!done) {
-                                System.out.print("> ");
+                                System.out.print(ANSI.bld + "> ");
                                 try {
                                     lastAnswer = input.nextInt();
                                     done = true;
                                 } catch (InputMismatchException e) {
-                                    System.out.println("Please enter an integer.");
+                                    System.out.println(ANSI.rst + "Please enter an integer.");
                                     done = false;
                                 }
+                                System.out.print(ANSI.rst);
                                 input.nextLine();
                             }
 
@@ -175,11 +161,11 @@ public class Adventure {
                             }
 
                             // Redisplay
-                            clrScr();
+                            Clearer.go();
                             dungeon.display(you);
                             System.out.println();
-                            if (battle.result(lastAnswer)) { System.out.println("You won the battle!"); }
-                            else { System.out.println("You lost the battle."); }
+                            if (battle.result(lastAnswer)) { System.out.println(ANSI.grn + "You won the battle!" + ANSI.rst); }
+                            else { System.out.println(ANSI.red + "You lost the battle." + ANSI.rst); }
 
                         }
 
@@ -195,37 +181,30 @@ public class Adventure {
                 // Player Logic
                 if (!you.isDead() && !you.isWinner()) {
                     System.out.println("Lives: " + you.getLives() + ". Monsters: " + monsterCount + ".");
-                    System.out.print("Where to?\n> ");
+                    System.out.print("Where to?\n" + ANSI.bld + "> ");
                     lastMove = you.goMove(input.nextLine(), dungeon, monsterCount);
+                    System.out.print(ANSI.rst);
                 }
 
             }
 
             // Game End
             long gameFinish = System.nanoTime();
-            clrScr();
+            Clearer.go();
             dungeon.display(you);
             System.out.println();
-            if (you.isDead() || you.isWinner()) {
-                System.out.print("You have ");
-                if (you.isDead()) {
-                    System.out.println("died, rest in piece.");
-                } else if (you.isWinner()) {
-                    System.out.println("won, great job!");
-                } else {
-                    System.out.println("broken the game, how did you do that?");
-                }
-            } else {
-                System.out.println("You really have broken the game...");
-            }
+            if (you.isDead()) { System.out.println(ANSI.red + "You have died, rest in piece." + ANSI.rst);
+            } else if (you.isWinner()) { System.out.println(ANSI.grn + "You have won, great job!" + ANSI.rst);
+            } else { System.out.println(ANSI.yel + "You managed to break the game, how did you do that?" + ANSI.rst); }
             int gameTotal = (int)( ((gameFinish-gameStart)/1000000000) + 0.5 );
             System.out.println("This round lasted " + gameTotal + " seconds.");
 
             // Prompt Retry
             System.out.println("Would you like to play again?");
             done = false; while (!done) {
-                System.out.print("> ");
+                System.out.print(ANSI.bld + "> ");
                 String againInput = input.nextLine();
+                System.out.print(ANSI.rst);
                 againInput = againInput.toLowerCase();
                 if (againInput.equals("y") || againInput.equals("yes")) {
                     done = true; again = true;
@@ -239,12 +218,12 @@ public class Adventure {
         }
 
         // Quit
-        clrScr();
+        Clearer.go();
         InitStatus cleanup = new InitStatus("Closing up shop");
         input.close();
         cleanup.finished();
-        clrScr();
-        System.out.println("Goodbye, thank you for playing!");
+        Clearer.go();
+        System.out.println(ANSI.bld + "Goodbye, thank you for playing!" + ANSI.rst);
         System.out.println();
         return;
 

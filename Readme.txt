@@ -4,12 +4,12 @@
             ___)__(_____,
             \__________/ \
              \________/__/
-           .__\______/__.
+            __\______/__
 +----------(____________)-----------+
 |                                   |
 |     T H E   Q U E S T   F O R     |
-|  ,_____,                          |
-|  |_, ,_|  __ _   __   __   __ _   |
+|  ._____.                          |
+|  |_. ._|  __ _   __   __   __ _   |
 |    | |   / _` |  \ \ / /  / _` |  |
 |    | |  | (_| |   \ V /  | (_| |  |
 |   _/ |   \__,_|    \_/    \__,_|  |
@@ -34,6 +34,20 @@ monsters littered around the dungeon,
 reach the goal, and escape. You have
 3 lives, each which can be lost in
 battle. Good luck!
+
+======== SYSTEM REQUIREMENTS ========
+
+       It has to be playable...
+
+"Woah! A game this simple has system
+requirements?" you may ask, & indeed
+it does. All you need is a compatible
+version of the Java runtime, and an
+ANSI-compliant console to run the game
+in. For the best experience, make
+sure the color scheme of your console
+has dark background colors and bright
+foreground colors.
 
 ============ USER INPUT =============
 
@@ -137,50 +151,6 @@ challenge, why not pit yourself
 against time itself? Each round is
 timed, and that time is displayed
 when it ends.
-
-=========== RESTRICTIONS ===========
-
-       Oh, this is a project?
-
-Ok, proof I have obeyed the project
-restrictions is right here:
-
-   1. The first custom if statement
-      is located on line 59.
-
-   2. The first custom if-else-if
-      statement begins on line 211.
-
-   3. && is utilized on line 93, and
-      || is utilized on line 209.
-
-   4. I am not comparing objects as
-      a whole, just values returned
-      from functions within those
-      objects.
-
-   5. The game itself ends when the
-      statement contained in the
-      while loop at line 128 returns
-      false. If the player does not
-      choose to play another round
-      when prompted at line 225,
-      the program cleans up after
-      itself and closes.
-
-   6. The game is won once all the
-      monsters are defeated (when
-      monsterCount <= 0), and lost
-      once the player loses all lives
-      (you.isDead() returns true).
-
-   7. Monster positions, the goal
-      position, and battle questions
-      are all randomized.
-
-   8. Comments are everywhere. The
-      first example of one is found
-      on line 1.
 
 ============= COMPILING =============
 

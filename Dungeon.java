@@ -38,28 +38,31 @@ public class Dungeon {
         for (int y = 0; y < 5; y++) {
 
             // Line Top
-            System.out.println("+----+----+----+----+----+");
+            System.out.println(ANSI.cyn + "+----+----+----+----+----+" + ANSI.rst);
 
             // Cells
-            System.out.print("|");
+            System.out.print(ANSI.cyn + "|");
             for (int x = 0; x < 5; x++) {
 
                 // Player Side
-                System.out.print(" ");
+                System.out.print(ANSI.bld + " ");
                 if (playerX == x && playerY == y) {
-                    if (playerAlive) { System.out.print("@"); }
-                    else { System.out.print("*"); }
+                    if (playerAlive) { System.out.print(ANSI.wht + "@"); }
+                    else { System.out.print(ANSI.blk + "*"); }
                 } else {
                     System.out.print(" ");
                 }
 
                 // Object Side
                 if (x != 0 || y != 0) {
-                    System.out.print(rooms[x][y].getObject());
+                    String curObj = rooms[x][y].getObject();
+                    if (curObj.equals("$")) { curObj = ANSI.red + curObj; }
+                    else if (curObj.equals("!")) { curObj = ANSI.yel + curObj; }
+                    System.out.print(curObj);
                 } else {
-                    System.out.print("]");
+                    System.out.print(ANSI.grn + "]");
                 }
-                System.out.print(" |");
+                System.out.print(ANSI.rst + ANSI.cyn + " |");
 
             }
 
@@ -69,7 +72,7 @@ public class Dungeon {
         }
         
         // Cap Off
-        System.out.println("+----+----+----+----+----+");
+        System.out.println(ANSI.cyn + "+----+----+----+----+----+" + ANSI.rst);
     }
     
 }
