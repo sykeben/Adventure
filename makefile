@@ -9,5 +9,5 @@ endif
 
 default:
 	$(JC) $(JFLAGS) *.java
-	$(AC) $(AFLAGS) Adventure.jar Adventure *.class
+	$(AC) $(AFLAGS) Adventure-Universal.jar Adventure *.class
 	$(RM) *.class
